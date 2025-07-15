@@ -7,20 +7,11 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.ui.Modifier
 import com.vahidmohtasham.globalstror.android.features.product.ProductScreen
-import com.vahidmohtasham.globalstror.core.di.appModule
-import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
+
 
 class MainActivity : ComponentActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Start Koin
-        startKoin {
-            androidContext(this@MainActivity)
-            modules(appModule)
-        }
 
         setContent {
             MyApplicationTheme {

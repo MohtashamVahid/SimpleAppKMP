@@ -12,6 +12,7 @@ class ProductApiImpl(
 ) : ProductApi {
     override suspend fun getAllProducts(): List<ProductDto> {
         val response: HttpResponse = httpClient.get("https://fakestoreapi.com/products")
-        return response.body()
+        return response.body<List<ProductDto>>()
     }
+
 }

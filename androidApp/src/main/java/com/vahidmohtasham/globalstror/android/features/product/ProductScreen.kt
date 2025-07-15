@@ -11,9 +11,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
+import com.vahidmohtasham.globalstror.android.features.product.presentation.ProductViewModel
 import com.vahidmohtasham.globalstror.features.product.presentation.ProductUiState
-import com.vahidmohtasham.globalstror.features.product.presentation.ProductViewModel
-import org.koin.androidx.compose.koinViewModel
+ import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun ProductScreen(viewModel: ProductViewModel = koinViewModel()) {

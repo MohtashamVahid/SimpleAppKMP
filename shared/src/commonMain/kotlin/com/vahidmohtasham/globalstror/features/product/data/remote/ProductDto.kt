@@ -1,7 +1,9 @@
 package com.vahidmohtasham.globalstror.features.product.data.remote
 
-import com.vahidmohtasham.globalstror.features.product.domain.model.Product
+
 import kotlinx.serialization.Serializable
+import com.vahidmohtasham.globalstror.features.product.domain.model.Product
+import com.vahidmohtasham.globalstror.features.product.domain.model.Rating
 
 @Serializable
 data class ProductDto(
@@ -9,7 +11,25 @@ data class ProductDto(
     val title: String,
     val price: Double,
     val description: String,
-    val image: String
+    val category: String,
+    val image: String,
+    val rating: RatingDto
 ) {
-    fun toDomain(): Product = Product(id, title, price, description, image)
+    fun toDomain(): Product {
+        return Product(
+            id = id,
+            title = title,
+            price = price,
+            description = description,
+            image = image,
+            rating = Rating(rating.rate, rating.count)
+        )
+    }
+
 }
+
+@Serializable
+data class RatingDto(
+    val rate: Double,
+    val count: Int
+)
